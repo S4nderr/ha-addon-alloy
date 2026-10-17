@@ -24,7 +24,7 @@ Fork van [ecohash-co/ha-addon-alloy](https://github.com/ecohash-co/ha-addon-allo
 
 ## Wat er aankomt
 
-Elke journalregel krijgt `host` en `unit` als stream-velden en `ident`, `priority`, `level` (emerg … debug), `transport`, `pid` als gewone velden. HAOS-eigenheid: Core, Supervisor en add-ons loggen via Docker naar de journal en zouden alle `docker.service` als unit krijgen; daarom wordt de containernaam (`homeassistant`, `hassio_supervisor`, `addon_…`) de unit als die er is.
+Elke journalregel krijgt `host` en `unit` als stream-velden en `ident`, `priority`, `level` (emerg … debug), `transport`, `pid` als gewone velden. HAOS-eigenheid: Core, Supervisor en add-ons loggen via Docker naar de journal en zouden alle `docker.service` als unit krijgen; daarom wordt de containernaam (`homeassistant`, `hassio_supervisor`, `app_…`) de unit als die er is.
 
 Zoeken: `host:ha _time:24h | stats by (unit) count()` op http://192.168.2.51:9428/select/vmui/.
 
