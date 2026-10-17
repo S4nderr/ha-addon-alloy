@@ -1,10 +1,8 @@
-# Grafana Alloy for Home Assistant
+# Grafana Alloy (Logarchief)
 
 ![Supports amd64 Architecture](https://img.shields.io/badge/amd64-yes-green.svg)
 ![Supports aarch64 Architecture](https://img.shields.io/badge/aarch64-yes-green.svg)
 
-Ship Home Assistant OS systemd journal logs to Grafana Loki using Grafana Alloy.
+Stuurt het HAOS-journal (host, Supervisor, Core, add-ons) naar het Logarchief van het homelab via de Loki-push-API, in het schema `host`/`unit`.
 
-Replaces the deprecated Promtail add-on which fails on HAOS 11+ due to systemd 252+ compact journal format incompatibility.
-
-For full documentation, see the **Documentation** tab after installing.
+Fork van ecohash-co/ha-addon-alloy met Alloy v1.18.1. Documentatie: tab **Documentatie** na installatie.

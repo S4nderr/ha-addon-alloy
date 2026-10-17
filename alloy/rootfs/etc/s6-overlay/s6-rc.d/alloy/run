@@ -1,5 +1,8 @@
 #!/usr/bin/with-contenv bash
+# 0.0.0.0:12345 is nodig voor de watchdog van de Supervisor (/-/ready); de poort wordt
+# standaard niet naar buiten gepubliceerd (config.yaml: ports 12345/tcp: null).
 exec /usr/bin/alloy run \
     --server.http.listen-addr=0.0.0.0:12345 \
     --storage.path=/data/alloy \
+    --disable-reporting \
     /etc/alloy/config.alloy

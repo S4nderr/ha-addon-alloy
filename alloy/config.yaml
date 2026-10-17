@@ -1,13 +1,13 @@
-name: Grafana Alloy
-version: "1.0.0"
+name: Grafana Alloy (Logarchief)
+version: "1.1.0"
 slug: alloy
 description: >-
-  Ship Home Assistant logs to Loki using Grafana Alloy.
-  Replacement for the deprecated Promtail add-on.
-  Reads systemd journal and forwards to a remote Loki instance.
-url: https://github.com/ecohash-co/ha-addon-alloy
+  Stuurt het volledige HAOS-journal (host, Supervisor, Core, elke add-on) naar het
+  Logarchief (VictoriaLogs) via de Loki-push-API, in het schema host/unit van ADR 0005.
+  Fork van ecohash-co/ha-addon-alloy met Alloy v1.18.1.
+url: https://github.com/S4nderr/ha-addon-alloy
 codeowners:
-  - "@ecohash-co"
+  - "@S4nderr"
 arch:
   - aarch64
   - amd64
@@ -18,15 +18,19 @@ journald: true
 map:
   - addon_config:rw
 ports:
-  12345/tcp: 12345
+  12345/tcp: null
 ports_description:
-  12345/tcp: "Alloy debug UI"
+  12345/tcp: "Alloy debug-UI (standaard dicht; alleen openen bij het zoeken naar een fout)"
 watchdog: "http://[HOST]:[PORT:12345]/-/ready"
 options:
-  loki_url: "http://localhost:3100/loki/api/v1/push"
+  loki_url: "http://192.168.2.51:9428/insert/loki/api/v1/push"
+  host: "ha"
+  max_age: "720h"
   log_level: info
 schema:
   loki_url: url
+  host: "match(^[a-zA-Z0-9_-]+$)"
+  max_age: "match(^[0-9]+[hm]$)"
   log_level: "list(debug|info|warn|error)"
   additional_config: "str?"
 stage: experimental
