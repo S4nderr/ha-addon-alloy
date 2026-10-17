@@ -6,10 +6,10 @@ Fork van [ecohash-co/ha-addon-alloy](https://github.com/ecohash-co/ha-addon-allo
 
 ## Installatie
 
-1. **Instellingen → Add-ons → Add-on winkel → ⋮ (rechtsboven) → Repositories**
+1. **Instellingen → Apps** (heette tot 2025 "Add-ons") **→ winkel → ⋮ (rechtsboven) → Repositories**
 2. Plak `https://github.com/S4nderr/ha-addon-alloy` → **Toevoegen** → sluiten
 3. Zoek **Grafana Alloy (Logarchief)** in de winkel → **Installeren** (HAOS bouwt het image lokaal; de eerste keer duurt dat enkele minuten)
-4. Tab **Configuratie**: `loki_url` staat standaard goed voor dit homelab; `host` = `ha`
+4. Klik de app aan, tab **Configuratie**: `loki_url` staat standaard goed voor dit homelab; `host` = `ha`
 5. **Starten**, daarna **Log** controleren: de regel `Alloy-config gegenereerd en gevalideerd` en `Alloy is running`
 
 ## Opties
@@ -32,4 +32,4 @@ Zoeken: `host:ha _time:24h | stats by (unit) count()` op http://192.168.2.51:942
 
 - **Alloy-versie**: `ALLOY_VERSION` in `alloy/Dockerfile`, tegelijk met de andere Alloys in het homelab; `version` in `alloy/config.yaml` ophogen, regel in `alloy/CHANGELOG.md`. HA toont dan een update.
 - **Upstream volgen**: `git fetch upstream && git log upstream/main` en handmatig overnemen wat nuttig is; de pijplijn hier is bewust anders.
-- **Debug-UI**: poort 12345 staat standaard dicht; in de add-on-configuratie onder *Netwerk* tijdelijk openzetten als het nodig is.
+- **Debug-UI**: poort 12345 staat standaard dicht; in de app-configuratie onder *Netwerk* tijdelijk openzetten als het nodig is.

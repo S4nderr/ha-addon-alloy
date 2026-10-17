@@ -26,7 +26,7 @@ Leest het systemd-journal van Home Assistant OS en stuurt elke regel naar het Lo
 - **Niets in het archief**: controleer in het add-on-log of `Alloy is running` staat en of er `level=error` regels zijn met `403` (loket laat dit adres niet toe) of `connection refused` (loket niet bereikbaar).
 - **Add-on start niet**: het log toont de validatiefout; meestal `additional_config`.
 - **"timestamp too old"** vlak na de eerste start is normaal: regels ouder dan de bewaartermijn worden geweigerd.
-- **Debug-UI**: poort 12345 in de add-on-configuratie onder *Netwerk* openzetten, dan `http://192.168.2.49:12345`. Daarna weer dichtzetten.
+- **Debug-UI**: poort 12345 in de app-configuratie (Instellingen → Apps) onder *Netwerk* openzetten, dan `http://192.168.2.49:12345`. Daarna weer dichtzetten.
 
 ## Bron
 
