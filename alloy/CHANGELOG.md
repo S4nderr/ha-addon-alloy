@@ -1,5 +1,11 @@
 # Changelog
 
+## 1.2.0 - 2026-11-13 (fork S4nderr)
+
+### Gewijzigd
+- Alloy v1.21.3 (was 1.18.1), gelijk aan de andere Alloys in het homelab
+- Geen wijziging in config of opties nodig: het sjabloon is gevalideerd met `alloy validate` v1.21.3. De brekende wijziging in v1.21 (`loki.write`-WAL alleen nog experimenteel) raakt deze app niet, want die gebruikt geen WAL
+
 ## 1.1.0 - 2026-10-17 (fork S4nderr)
 
 ### Gewijzigd

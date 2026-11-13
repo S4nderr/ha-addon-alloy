@@ -5,4 +5,4 @@
 
 Stuurt het HAOS-journal (host, Supervisor, Core, add-ons) naar het Logarchief van het homelab via de Loki-push-API, in het schema `host`/`unit`.
 
-Fork van ecohash-co/ha-addon-alloy met Alloy v1.18.1. Documentatie: tab **Documentatie** na installatie.
+Fork van ecohash-co/ha-addon-alloy met Alloy v1.21.3. Documentatie: tab **Documentatie** na installatie.
